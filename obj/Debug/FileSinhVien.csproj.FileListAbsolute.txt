@@ -1,0 +1,11 @@
+D:\study\C#_project\FileSinhVien\FileSinhVien\bin\Debug\FileSinhVien.exe.config
+D:\study\C#_project\FileSinhVien\FileSinhVien\bin\Debug\FileSinhVien.exe
+D:\study\C#_project\FileSinhVien\FileSinhVien\bin\Debug\FileSinhVien.pdb
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.csproj.AssemblyReference.cache
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.csproj.SuggestedBindingRedirects.cache
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.SinhVien.resources
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.Properties.Resources.resources
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.csproj.GenerateResource.cache
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.csproj.CoreCompileInputs.cache
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.exe
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.pdb

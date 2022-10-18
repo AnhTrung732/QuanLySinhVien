@@ -1,0 +1,4 @@
+20520322   |   Bùi Trung   |   8.5   |   KHNT
+20520330   |   Nguyễn Thanh Trọng   |   9.0   |   KHNT
+1111   |   Ana   |   8   |   KHNT
+2222   |   Alex   |   9   |   KHMT
