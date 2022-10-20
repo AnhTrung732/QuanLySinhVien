@@ -9,14 +9,18 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace FileSinhVien
 {
+    
     public partial class SinhVien : Form
     {
         string flag;
         DataTable dtSV;
         int index;
+        string mssv_timkiem;
         string filePath = @"D:\\study\\C#_project\\FileSinhVien\\FileSinhVien\\SinhVien.txt";
         public SinhVien()
         {
@@ -34,15 +38,14 @@ namespace FileSinhVien
         public DataTable ConvertToDataTable(string filePath)
         {   
             DataTable dtSample = createTable();
-            Console.WriteLine(dtSample.Columns.Count); 
 
             string[] lines = System.IO.File.ReadAllLines(filePath);
-            Console.WriteLine(lines[0]);
+            
 
             foreach (string line in lines)
             {
                 var cols = line.Split('|');
-                Console.WriteLine(cols[0]);
+                
 
                 DataRow dr = dtSample.NewRow();
                 for (int cIndex = 0; cIndex < dtSample.Columns.Count; cIndex++)
@@ -74,6 +77,7 @@ namespace FileSinhVien
             txtDiem.ReadOnly = true;
             txtLop.ReadOnly = true;
             txtTenSV.ReadOnly = true;
+            txtbox_timkiem.ReadOnly = false; 
 
             btnThem.Focus();
         }
@@ -89,6 +93,8 @@ namespace FileSinhVien
             txtTenSV.ReadOnly = false;
             txtDiem.ReadOnly= false;
             txtLop.ReadOnly = false;
+            txtbox_timkiem.ReadOnly = false;
+
 
             txtMaSV.Focus();
         }
@@ -119,7 +125,7 @@ namespace FileSinhVien
                     dtSV.Rows.Add(txtMaSV.Text, txtTenSV.Text, txtDiem.Text, txtLop.Text);
                     dataGridSinhVien.DataSource = dtSV;
                     dataGridSinhVien.RefreshEdit();
-                    Console.WriteLine(dtSV);
+                    
 
                     StreamWriter w = new StreamWriter(filePath, true);
                     foreach (DataRow row in dtSV.Rows)
@@ -221,6 +227,69 @@ namespace FileSinhVien
                 }
                 w.Close();
             }
+        }
+        public void ShowMyDialog()
+        {
+            Timkiem TimkiemDialog = new Timkiem();
+            Console.WriteLine("###");
+            if (TimkiemDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                // Read the contents of testDialog's TextBox.
+                this.mssv_timkiem = TimkiemDialog.txtbox_mssv.Text;
+            }
+            else
+            {
+                this.mssv_timkiem = "";
+            }
+            txtbox_timkiem.Text = this.mssv_timkiem;
+            TimkiemDialog.Dispose();
+            Timkiem(mssv_timkiem);
+        }
+        private void btn_Timkiem_Click(object sender, EventArgs e)
+        {
+            if (txtbox_timkiem.Text == null || txtbox_timkiem.Text == "")
+            {
+                ShowMyDialog();
+            }
+            else Timkiem(txtbox_timkiem.Text);
+
+        }
+        private void LockTimkiem()
+        {
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = true;
+            btnLuu.Enabled = false; ;
+            btnHuy.Enabled = true;
+
+            txtMaSV.ReadOnly = true;
+            txtDiem.ReadOnly = false;
+            txtLop.ReadOnly = false;
+            txtTenSV.ReadOnly = false;
+            txtbox_timkiem.ReadOnly = false;
+
+            btnLuu.Focus();
+        }
+        private void Timkiem(string mssv_timkiem)
+        {
+            LockTimkiem();
+            //string expression = $"MaSV = {mssv_timkiem}";
+            //Console.WriteLine($"{ mssv_timkiem}");
+            //DataRow[] rows = dtSV.Select(expression);
+            //for (int i = 0; i < rows.Length; i++)
+            //{
+            //   Console.WriteLine(rows[i][0]);
+            //}
+            dtSV.DefaultView.RowFilter = string.Format("[MaSV] LIKE '%{0}%'", mssv_timkiem);
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            dataGridSinhVien.DataSource = dtSV;
+            dataGridSinhVien.RefreshEdit();
+            LockControl();
+            dataGridSinhVien_SelectionChanged(null, null);
+            dtSV.DefaultView.RowFilter = string.Empty;
         }
     }
 }

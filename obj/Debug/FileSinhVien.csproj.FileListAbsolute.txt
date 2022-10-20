@@ -9,3 +9,4 @@ D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.csproj.Gene
 D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.csproj.CoreCompileInputs.cache
 D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.exe
 D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.pdb
+D:\study\C#_project\FileSinhVien\FileSinhVien\obj\Debug\FileSinhVien.Timkiem.resources

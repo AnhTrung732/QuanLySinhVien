@@ -46,6 +46,9 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.btn_Timkiem = new System.Windows.Forms.Button();
+            this.txtbox_timkiem = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSinhVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +145,7 @@
             // colMaSV
             // 
             this.colMaSV.DataPropertyName = "MaSV";
-            this.colMaSV.HeaderText = "Mã Sinh Viên";
+            this.colMaSV.HeaderText = "MSSV";
             this.colMaSV.MinimumWidth = 6;
             this.colMaSV.Name = "colMaSV";
             this.colMaSV.Width = 125;
@@ -209,12 +212,42 @@
             this.btnHuy.TabIndex = 13;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btn_Timkiem
+            // 
+            this.btn_Timkiem.Location = new System.Drawing.Point(411, 154);
+            this.btn_Timkiem.Name = "btn_Timkiem";
+            this.btn_Timkiem.Size = new System.Drawing.Size(243, 23);
+            this.btn_Timkiem.TabIndex = 14;
+            this.btn_Timkiem.Text = "Tìm kiếm";
+            this.btn_Timkiem.UseVisualStyleBackColor = true;
+            this.btn_Timkiem.Click += new System.EventHandler(this.btn_Timkiem_Click);
+            // 
+            // txtbox_timkiem
+            // 
+            this.txtbox_timkiem.Location = new System.Drawing.Point(172, 154);
+            this.txtbox_timkiem.Name = "txtbox_timkiem";
+            this.txtbox_timkiem.Size = new System.Drawing.Size(159, 22);
+            this.txtbox_timkiem.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 16);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Tìm theo MSSV";
             // 
             // SinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 454);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtbox_timkiem);
+            this.Controls.Add(this.btn_Timkiem);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnXoa);
@@ -254,10 +287,13 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btn_Timkiem;
+        public System.Windows.Forms.TextBox txtbox_timkiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLop;
+        private System.Windows.Forms.Label label1;
     }
 }
 
